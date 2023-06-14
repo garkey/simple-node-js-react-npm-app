@@ -1,0 +1,39 @@
+<template>
+    <template if:true={isEditable}>
+        <div class="containr">
+            <input
+                type="number"
+                class="counter slds-p-left_small"
+                step="1"
+                value={accessory.quantity}
+                onchange={handleQuantityChange}
+            />
+            <button
+                title={accessory.name}
+                value={accessory.accessoryAttachmentId}
+                style={buttonStyle}
+                class="btnStyle slds-p-left_small slds-p-right_small slds-m-left_small"
+                onclick={deleteAttachment}
+            >
+                <span>{accessory.name}</span>
+                <lightning-icon
+                    class="closebtn slds-m-left_small slds-current-color"
+                    icon-name="utility:close"
+                    size="xx-small"
+                ></lightning-icon>
+            </button>
+        </div>
+    </template>
+    <template if:false={isEditable}>
+        <div class="btnwrapper slds-p-around_small">
+            <button
+                title={accessory.name}
+                value={accessory.name}
+                style={buttonStyle}
+                class="btnStyle slds-p-left_small slds-p-right_medium"
+            >
+                Qty {accessory.quantity} | {accessory.name}
+            </button>
+        </div>
+    </template>
+</template>

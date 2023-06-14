@@ -1,0 +1,18 @@
+.line {
+    width: 1px;
+    border: 1px solid #dddddd;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 45px 70px;
+    min-height: 120px;
+    justify-content: space-between;
+}
+
+.column-left {
+    width: calc(50% - 40px);
+}
+.column-right {
+    width: calc(50% - 40px);
+}

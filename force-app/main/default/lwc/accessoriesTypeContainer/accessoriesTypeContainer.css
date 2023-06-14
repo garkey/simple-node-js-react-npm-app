@@ -1,0 +1,80 @@
+.heading {
+    height: 19px;
+    width: 157px;
+    color: #555555;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+input {
+    height: 35px;
+    width: 100%;
+    border: solid 1px #e7e7e7;
+    background-color: #f0f0f0;
+    padding-left: 0.75rem;
+    padding-right: 2.2rem;
+}
+
+input:focus {
+    border-color: #225792;
+}
+
+input ~ .rightside {
+    color: #989898;
+}
+
+input:focus ~ .rightside {
+    color: inherit;
+}
+
+.input::placeholder {
+    color: #959595;
+}
+.container-box {
+    display: flex;
+}
+.rightside {
+    position: absolute;
+    margin-top: 0.5625rem;
+    line-height: 1;
+    border: 0;
+    right: 0.25rem;
+}
+
+.accessory-list {
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.14);
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    position: absolute;
+    max-height: 295px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    position: relative;
+}
+.accessory-item {
+    color: #555555;
+    font-family: Roboto;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    height: 32px;
+    text-overflow: ellipsis; /* Display ellipsis for truncated text */
+    max-width: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+input:focus {
+    background-color: white;
+}

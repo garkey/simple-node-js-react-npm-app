@@ -1,0 +1,25 @@
+<template>
+    <div class="container">
+        <div class="column-left">
+            <c-accessories-type-container
+                data-id="mandatory"
+                heading={label.cams_mandatory_accessory}
+                need="MANDATORY"
+                is-editable={isEditable}
+                initialuserdata={requiredAccData}
+            >
+            </c-accessories-type-container>
+        </div>
+        <span class="line"></span>
+        <div class="column-right">
+            <c-accessories-type-container
+                data-id="optional"
+                heading={label.cams_optional_accessory}
+                need="OPTIONAL"
+                is-editable={isEditable}
+                initialuserdata={optionalAccData}
+            >
+            </c-accessories-type-container>
+        </div>
+    </div>
+</template>

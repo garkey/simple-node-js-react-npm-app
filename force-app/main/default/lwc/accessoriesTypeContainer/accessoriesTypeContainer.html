@@ -1,0 +1,75 @@
+<template>
+    <div>
+        <div class="heading">{heading}</div>
+        <template lwc:if={isEditable}>
+            <div>
+                <div>
+                    <div class="container-box slds-is-relative">
+                        <input
+                            type="text"
+                            placeholder={label.cams_add_accessory}
+                            value={value}
+                            oninput={handleinputclick}
+                        />
+                        <div class="rightside">
+                            <lightning-icon
+                                src={addIcon}
+                                size="small"
+                                alternative-text="Create Accessory"
+                                onclick={addCustomAccessory}
+                            ></lightning-icon>
+                        </div>
+                    </div>
+                    <template lwc:if={showSearchResult}>
+                        <div class="wrapper">
+                            <ul class="accessory-list">
+                                <template
+                                    for:each={accessoriesSearchData}
+                                    for:item="accessorySearchItem"
+                                >
+                                    <li
+                                        key={accessorySearchItem.accessoryId}
+                                        class="slds-p-around_x-small"
+                                    >
+                                        <button
+                                            onclick={addExistingAccessory}
+                                            title={accessorySearchItem.accessoryName}
+                                            value={accessorySearchItem.accessoryId}
+                                            class="accessory-item slds-p-around_x-small"
+                                            style={computeaccessory}
+                                        >
+                                            {accessorySearchItem.accessoryName}
+                                        </button>
+                                    </li>
+                                </template>
+                                <li
+                                    key={countKey}
+                                    lwc:if={showSearchResultCount}
+                                >
+                                    +{searchResultCount} More Accessories
+                                </li>
+                            </ul>
+                        </div>
+                    </template>
+                    <template lwc:if={displayEmptyPlaceholder}>
+                        <div class="accessory-list slds-p-around_x-small">
+                            No Accessories Found
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <template for:each={userselecteddata} for:item="item">
+            <div key={item}>
+                <c-accessories-line-item
+                    is-editable={isEditable}
+                    accessory={item}
+                    ondelete_item={deleteItem}
+                    onupdate_quantity={updateQuantity}
+                    need={need}
+                ></c-accessories-line-item>
+            </div>
+        </template>
+    </div>
+</template>

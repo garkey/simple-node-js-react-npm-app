@@ -8,12 +8,14 @@
     "react-scripts": "^4.0.3"
   },
   "scripts": {
+    "cf": "node scripts/codeformatcheck.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "xml2js": "^0.6.0"
   }
 }
