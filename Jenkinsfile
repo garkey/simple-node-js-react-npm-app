@@ -8,10 +8,12 @@ pipeline {
     stages {
         stage('Installing NPM. Code Formatting & Client Unit test') {
       steps {
+          script {
           try {
-          sh 'npm install'
+            sh 'npm install'
           }catch (Exception e) {
-          error "Npm tests & code formatting failed : $e"
+            error "Npm tests & code formatting failed : $e"
+          }
           }
       }
         }
