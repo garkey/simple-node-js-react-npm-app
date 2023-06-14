@@ -6,7 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Code Formatting & Client Unit test') { 
             steps {
                 sh 'npm install' 
             }
