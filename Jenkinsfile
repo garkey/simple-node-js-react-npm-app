@@ -15,6 +15,13 @@ pipeline {
                         error "Npm tests & code formatting failed : $e"
                     }
                 }
+                script {
+                    try {
+                        sh 'prettier --check ./src'
+                    } catch (Exception e) {
+                        error "Npm tests & code formatting failed : $e"
+                    }
+                }
             }
         }
     }
