@@ -17,7 +17,7 @@ pipeline {
                 }
                 script {
                     try {
-                        sh 'prettier --check ./src'
+                        sh 'npx prettier --check ./src'
                     } catch (Exception e) {
                         error "Npm tests & code formatting failed : $e"
                     }
