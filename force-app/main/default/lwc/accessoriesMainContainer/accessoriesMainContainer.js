@@ -11,12 +11,20 @@ export default class AccessoriesMainContainer extends LightningElement {
 
     _initialUserData = [];
 
+
+
+
+
+
     @api
     get userSelectedData() {
         return [];
     }
 
-    set userSelectedData(data) {
+    set userSelectedData(data)
+    
+    
+    {
         this._initialUserData = data.map((elem) => {
             return {
                 accessoryAttachmentId: elem.id,
@@ -30,6 +38,9 @@ export default class AccessoriesMainContainer extends LightningElement {
     }
 
     get requiredAccData() {
+
+
+      
         return this._initialUserData.filter((e) => e.need === 'MANDATORY');
     }
 
