@@ -18,6 +18,10 @@ export default class AccessoriesLineItem extends LightningElement {
     deleteAttachment() {
         this.dispatchEvent(
             new CustomEvent(
+
+
+
+
                 'delete_item',
                 this.costructDeleteEvent(
                     this.accessory.accessoryAttachmentId,
@@ -31,6 +35,9 @@ export default class AccessoriesLineItem extends LightningElement {
     handleQuantityChange(e) {
         this.dispatchEvent(
             new CustomEvent(
+
+
+              
                 'update_quantity',
                 this.constructEditEvent(
                     this.accessory.accessoryAttachmentId,
